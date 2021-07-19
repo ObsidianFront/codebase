@@ -16,7 +16,10 @@ module.exports = {
 	},
 	settings: {
 		'import/resolver': {
-			typescript: {}
+			node: {
+				paths: ['src'],
+				extensions: ['.js', '.jsx', '.ts', '.tsx', '.vue']
+			}
 		}
 	},
 	rules: {
@@ -24,6 +27,7 @@ module.exports = {
 		'no-tabs': 0,
 		'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
 		'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+		'@typescript-eslint/no-var-requires': 0,
 		'import/no-extraneous-dependencies': ['error', { devDependencies: true }]
 	},
 	overrides: [
